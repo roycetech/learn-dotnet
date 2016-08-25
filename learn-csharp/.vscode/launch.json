@@ -1,0 +1,22 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Launch ConsoleApplication",
+			"type": "mono",
+			"request": "launch",
+			"program": "Program.exe",
+			"args": [],
+			"cwd": ".",
+			"runtimeExecutable": null,
+			"env": {}
+		},
+		{
+			"name": "Attach",
+			"type": "mono",
+			"request": "attach",
+			"address": "localhost",
+			"port": 5858
+		}
+	]
+}
