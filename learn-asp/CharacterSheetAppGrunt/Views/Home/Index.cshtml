@@ -1,9 +1,19 @@
-@model String
-<h2>Equipment</h2>
+@model CharacterSheetAppGrunt.Models.Equipment
+<h2>Equipment:</h2>
+
+<form asp-action="Create" class="form-inline mbm">
+  <div class="form-group">
+    <input type="text" name="equipmentName" />
+    <input type="submit" value="Add Equipment" class="form-control" />
+  </div>
+</form>
+
+<h4>Equipment:</h4>
 
 <div>
   <ul>
-    <li>@Model</li>
+    <li>
+      <label>@Model.Name</label>
+    </li>
   </ul>
 </div>
-
