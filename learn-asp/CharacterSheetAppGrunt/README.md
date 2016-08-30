@@ -10,7 +10,8 @@
 1. `dotnet run` to build and run the project, `ctrl+c` in the console to terminate.
 
 
-# Original README content below =========================================================================================
+# Original README content below
+
 # Welcome to ASP.NET Core
 
 We've made some big updates in this release, so it’s **important** that you spend a few minutes to learn what’s new.
