@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
+using CharacterSheetAppGrunt.Models;
 
 namespace CharacterSheetAppGrunt.Controllers
 {
@@ -7,12 +8,12 @@ namespace CharacterSheetAppGrunt.Controllers
   {
     public IActionResult Index()
     {
-      var name = "Sword";      
-      return View("Index", name);
+      return View("Index", Equipment.GetAll());
     }
 
     public IActionResult Create(String equipmentName) {
-        return View();
+        Equipment.Create(equipmentName);
+        return RedirectToAction("Index");
     }
   }
 

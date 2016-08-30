@@ -1,4 +1,4 @@
-@model CharacterSheetAppGrunt.Models.Equipment
+@model List<CharacterSheetAppGrunt.Models.Equipment>
 <h2>Equipment:</h2>
 
 <form asp-action="Create" class="form-inline mbm">
@@ -12,8 +12,10 @@
 
 <div>
   <ul>
+    @foreach(var item in Model) {    
     <li>
-      <label>@Model.Name</label>
+      <label>@item.Name</label>
     </li>
+    }
   </ul>
 </div>
