@@ -1,3 +1,24 @@
+# How to create
+
+Download a docker iamge for postgres.
+Update the project.json for the required dependencies to EntityFramework and postgres.
+Configure  the database injection in the `Startup.cs`
+Write the views, models, and controller classes.
+All models must have an attribute annotated as the primary key.
+
+# Setupp migrations
+
+Using console, go to the root of the project and enable migrations
+`$ dotnet ef migrations add InitialMigration`
+Apply the generated scaffolding code:
+`$ dotnet ef database update` 
+
+
+
+
+
+
+
 # Welcome to ASP.NET Core
 
 We've made some big updates in this release, so it’s **important** that you spend a few minutes to learn what’s new.

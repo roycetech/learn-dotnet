@@ -1,0 +1,29 @@
+@model ForgingAhead.Models.Character
+<h2>Create</h2>
+<hr>
+
+<form asp-action="Create" asp-controller="Character">
+    <div class="form-horizontal">
+        <h4>Character</h4>
+        <hr>
+        <div class="row">
+            <label class="control-label col-md-2" asp-for="Name"></label>
+            <div class="col-md-10">
+                <input class="form-control" asp-for="Name" />
+            </div>
+        </div>
+        <div class="row">
+            <label class="control-label col-md-2" asp-for="IsActive"></label>
+            <div class="col-md-10">
+                <input class="form-control" asp-for="IsActive" />
+            </div>
+        </div>
+
+        <hr>
+        <div class="row">
+            <label class="control-label col-md-2"></label>
+            <input type="submit" value="Create" class="form-control btn-primary" />
+        </div>
+
+    </div>
+</form>

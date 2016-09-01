@@ -28,6 +28,13 @@ namespace ForgingAhead {
             return View(model);
         }
 
+        [HttpGet]
+        public IActionResult Create()
+        {
+        return View();
+        }
+
+        [HttpPost]
         public IActionResult Create(Character character) {
             _context.Characters.Add(character);
             _context.SaveChanges();
