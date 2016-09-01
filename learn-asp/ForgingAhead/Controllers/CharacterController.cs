@@ -15,6 +15,7 @@ namespace ForgingAhead {
         }
 
         public IActionResult Index() {
+            ViewData["Title"] = "Characters";
             return View(_context.Characters.ToList());
         }
 

@@ -19,6 +19,7 @@ namespace ForgingAhead.Controllers
 
     public IActionResult Index()
     {
+      ViewData["Title"] = "Quests";
       return View("Index", _context.Quests);
     }
 

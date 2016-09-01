@@ -4,7 +4,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
+using System.IO;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.FileProviders;
+
 using Microsoft.EntityFrameworkCore;
+
 
 
 using ForgingAhead.Models;
@@ -56,6 +61,11 @@ namespace ForgingAhead
             }
 
             app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions() {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), @"images")),
+                RequestPath = new PathString("/images")
+            });
 
             app.UseMvc(routes =>
             {

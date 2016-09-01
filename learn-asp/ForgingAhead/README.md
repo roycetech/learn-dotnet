@@ -14,6 +14,14 @@ Apply the generated scaffolding code:
 `$ dotnet ef database update` 
 
 
+# Project Features
+
+1. Data Persistence using postgres
+2. Serving of static files
+3. CRUD Operation
+4. Linq
+5. Layouts
+
 
 
 
