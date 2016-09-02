@@ -18,14 +18,37 @@
                 <input class="form-control" asp-for="IsActive" />
             </div>
         </div>
-
+        <div class="row">
+            <label class="control-label col-md-2" asp-for=Level></label>
+            <div class="col-md-10">
+                <input class="form-control" type="number" asp-for="Level" />
+            </div>
+        </div>
+        <div class="row">
+            <label class="control-label col-md-2" asp-for=Strength></label>
+            <div class="col-md-10">
+                <input class="form-control" type="number" asp-for="Strength" />
+            </div>
+        </div>
+        <div class="row">
+            <label class="control-label col-md-2" asp-for=Dexterity></label>
+            <div class="col-md-10">
+                <input class="form-control" type="number" asp-for="Dexterity" />
+            </div>
+        </div>
+        <div class="row">
+            <label class="control-label col-md-2" asp-for=Intelligence></label>
+            <div class="col-md-10">
+                <input class="form-control" type="number" asp-for="Intelligence" />
+            </div>
+        </div>
         <hr>
         <div class="row">
             <label class="control-label col-md-2"></label>
             <input type="submit" value="Create" class="form-control btn-primary" />
         </div>
 
-        <div asp-validation-summary="All"></div>
+        <div asp-validation-summary="All" class="alert alert-danger"></div>
 
     </div>
 </form>

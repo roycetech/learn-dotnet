@@ -49,7 +49,7 @@ namespace ForgingAhead
         public IActionResult Create(Character character)
         {
             if (_context.Characters.Any(e => e.Name == character.Name)) {
-                ModelState.AddModelError("Name", "Name is already in use.");
+                ModelState.AddModelError("Name", $"The name \"{character.Name}\" is already in use.");
             }
             if (!ModelState.IsValid)
             {

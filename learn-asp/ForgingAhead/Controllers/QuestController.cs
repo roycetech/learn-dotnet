@@ -26,7 +26,7 @@ namespace ForgingAhead.Controllers
         {
             if (_context.Quests.Any(e => e.Name == quest.Name))
             {
-                ModelState.AddModelError("Name", "Name is already in use.");        
+                ModelState.AddModelError("Name", $"The quest name {quest.Name} is already in use.");        
             }
 
             if (!ModelState.IsValid)

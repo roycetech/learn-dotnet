@@ -61,10 +61,11 @@ namespace ForgingAhead
             }
 
             app.UseStaticFiles();
+
             app.UseStaticFiles(new StaticFileOptions() {
                 FileProvider = new PhysicalFileProvider(
-                    Path.Combine(Directory.GetCurrentDirectory(), @"images")),
-                RequestPath = new PathString("/images")
+                    Path.Combine(Directory.GetCurrentDirectory(), @"resources")),
+                RequestPath = new PathString("")
             });
 
             app.UseMvc(routes =>
