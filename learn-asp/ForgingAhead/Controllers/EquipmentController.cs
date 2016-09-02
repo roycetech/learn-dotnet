@@ -13,6 +13,7 @@ namespace ForgingAhead.Controllers
     }
 
 
+    [HttpGet]
     public IActionResult Index()
     {
         ViewData["Title"] = "Equipment";

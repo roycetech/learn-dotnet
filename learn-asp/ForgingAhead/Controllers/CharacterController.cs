@@ -14,16 +14,20 @@ namespace ForgingAhead {
             _context = context;
         }
 
+        [HttpGet]
         public IActionResult Index() {
             ViewData["Title"] = "Characters";
             return View(_context.Characters.ToList());
         }
 
+        [HttpGet]
         public IActionResult GetActive() {
             var model = _context.Characters.Where(e => e.IsActive).ToList();
             return View(model);
         }
 
+        [HttpGet]
+        [Route("Character/{name}/Details")]
         public IActionResult Details(string name) {
             var model = _context.Characters.FirstOrDefault(e => e.Name == name);
             return View(model);
@@ -42,11 +46,13 @@ namespace ForgingAhead {
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
         public IActionResult Update(Character character) {
             _context.Entry(character).State = EntityState.Modified;
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
         public IActionResult Delete(string name ) {
             var toDelete = _context.Characters.FirstOrDefault(n => n.Name == name);
             if (toDelete != null) {

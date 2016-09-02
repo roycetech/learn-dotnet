@@ -12,12 +12,14 @@ namespace ForgingAhead.Controllers
             _context = context;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             var model = _context.Characters.Where(e => e.IsActive).ToList();
             return View(model);
         }
 
+        [HttpGet]
         public IActionResult Error()
         {
             return View();
