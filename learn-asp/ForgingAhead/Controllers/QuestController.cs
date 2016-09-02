@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
-
+using System;
 
 using ForgingAhead.Models;
 
@@ -20,7 +20,7 @@ namespace ForgingAhead.Controllers
     public IActionResult Index()
     {
         ViewData["Title"] = "Quests";
-        return View("Index", _context.Quests);
+        return View("Index", _context.Quests.ToList());
     }
 
     [HttpGet]
@@ -40,8 +40,18 @@ namespace ForgingAhead.Controllers
     public IActionResult Details(string name)
     {
         var model = _context.Quests.FirstOrDefault(p => p.Name == name);      
+        Console.WriteLine(model);
         return View( model );
     }
+
+    public IActionResult Edit(string name)
+    {
+        ViewData["title"] = $"Edit {name}";
+        var model = _context.Quests.FirstOrDefault(p => p.Name == name);      
+        return View( model );
+    }
+
+
 
     public IActionResult Update(Quest quest) {
         _context.Entry(quest).State = EntityState.Modified;        

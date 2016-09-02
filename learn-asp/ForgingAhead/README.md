@@ -21,6 +21,9 @@ Apply the generated scaffolding code:
 3. CRUD Operation
 4. Linq
 5. Layouts
+6. Automatic Editor View for Model
+7. Editor Templates
+
 
 
 

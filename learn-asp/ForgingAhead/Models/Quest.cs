@@ -9,7 +9,6 @@ namespace ForgingAhead.Models {
         [DisplayAttribute(Name="Is Active")]
         public bool IsActive { get; set; }
 
-        // set up relationship here
-        public List<Character> Characters { get; set; }  
+        public List<Character> Characters { get; set; } = new List<Character>();
     }
 }
