@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 
 using Microsoft.AspNetCore.Mvc;
 using WebApplication.Data;
@@ -33,6 +34,19 @@ namespace WebApplication.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public IActionResult Details(int id) {
+            var model = _context.Players.Include(p => p.Scores).FirstOrDefault(p => p.Id == id);
+            return View(model);
+        }
+
+        public IActionResult AddScore(int id, int value) {
+            _context.Players.Include(p => p.Scores).FirstOrDefault( e=> e.Id == id).Scores.Add(new Score {Value = value});
+            _context.SaveChanges();
+            return RedirectToAction("Details", "Player", new {Id = id});
+        }
+        
 
     }
 }
