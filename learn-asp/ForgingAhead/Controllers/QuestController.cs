@@ -14,33 +14,33 @@ namespace ForgingAhead.Controllers
 
     public QuestController(ApplicationDbContext context )
     {
-      _context = context;
+        _context = context;
     }
 
     public IActionResult Index()
     {
-      ViewData["Title"] = "Quests";
-      return View("Index", _context.Quests);
+        ViewData["Title"] = "Quests";
+        return View("Index", _context.Quests);
     }
 
     [HttpGet]
     public IActionResult Create()
     {
-      return View();
+        return View();
     }
 
     [HttpPost]
     public IActionResult Create(Quest quest)
     {
-      _context.Quests.Add(quest);   
-      _context.SaveChanges(); 
-      return RedirectToAction("Index");
+        _context.Quests.Add(quest);   
+        _context.SaveChanges(); 
+        return RedirectToAction("Index");
     }
 
     public IActionResult Details(string name)
     {
-      var model = _context.Quests.FirstOrDefault(p => p.Name == name);      
-      return View( model );
+        var model = _context.Quests.FirstOrDefault(p => p.Name == name);      
+        return View( model );
     }
 
     public IActionResult Update(Quest quest) {

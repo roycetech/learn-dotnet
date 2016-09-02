@@ -1,25 +1,20 @@
-@model List<CharacterSheetAppGrunt.Models.Equipment>
+@model List<ForgingAhead.Models.Equipment>
 
 @section header {
     <meta name="description" content="List all equipment in ForgingAhead." >
 }
-<h2>Equipment:</h2>
-
-<form asp-action="Create" class="form-inline mbm">
-  <div class="form-group">
-    <input type="text" name="equipmentName" />
-    <input type="submit" value="Add Equipment" class="form-control" />
-  </div>
-</form>
-
-<h4>Equipment:</h4>
-
-<div>
-  <ul>
-    @foreach(var item in Model) {    
-    <li>
-      <label>@item.Name</label>
-    </li>
+<h1>
+    Characters
+</h1>
+<p>
+    <a asp-action="Create" asp-controller="Equipment" />Create new equipment</a>    
+</p>
+<ul>
+    @foreach (var item in Model) {
+        <li>
+            <a asp-action="Details" asp-controller="Equipment" asp-route-name="@item.Name" >
+            @item.Name
+            </a>
+        </li>
     }
-  </ul>
-</div>
+</ul>
