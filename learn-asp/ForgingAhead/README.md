@@ -24,6 +24,10 @@ Apply the generated scaffolding code:
 6. Automatic Editor View for Model
 7. Editor Templates
 8. Custom URL Routing
+9. Backend Data Validation using annotations
+10. Frontend Data Validation
+11. Unique, Required, Range Record Validation
+
 
 
 
